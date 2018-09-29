@@ -1,5 +1,5 @@
 module Lib
-    ( someFunc , divideSafe
+    ( someFunc 
     ) where
 
 
