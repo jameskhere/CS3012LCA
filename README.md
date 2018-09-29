@@ -1,4 +1,2 @@
-# CS3012-P01
-
-This is a very simple haskell based project demonstrating the use of tests in the deelopment process. 
-I used this project in a lecture in the series for CS3012.
+#CS3012LCA
+This is attempt 3 at the CS3012 Project for CS3012. After finding it difficult to tackle the problem using Rust, I decided to instead build the project using Haskell.
