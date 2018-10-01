@@ -51,7 +51,7 @@ bstContains (Node r left right) value =
   else bstContains right value
 
 
-bstLCA :: Ord a => BST a -> a -> a -> Maybe (BST a)
+bstLCA :: Ord a => BST a -> a -> a -> Maybe a
 -- Base case: The empty tree has no nodes, so the LCA of any two values in an
 -- empty tree does not exist.
 bstLCA Nil _ _ = Nothing
@@ -62,10 +62,10 @@ bstLCA root@(Node r left right) v1 v2 =
   -- If the root value matches at least one node, search the tree for the other
   -- and return this node if we find it.
   else if v1 == r then
-       if bstContains root v2 then Just root else Nothing
+       if bstContains root v2 then Just v1 else Nothing
   else if v2 == r then
-       if bstContains root v1 then Just root else Nothing
+       if bstContains root v1 then Just v2 else Nothing
   -- Otherwise, the values must be on opposite sides of the tree, so search
   -- for both and return the current node if we find them.
-  else if (bstContains root v1) && (bstContains root v2) then Just root
+  else if (bstContains root v1) && (bstContains root v2) then Just r
   else Nothing
